@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ingatlan
+namespace Ingatlanok
 {
     public class Ingatlan
     {
@@ -17,9 +17,9 @@ namespace Ingatlan
             get { return alapteruletM2; }
             set
             {
-                if (alapteruletM2 < 0)
+                if (value < 10)
                 {
-                    alapteruletM2 = 0;
+                    alapteruletM2 = 10;
                 }
                 else
                 {
@@ -28,13 +28,12 @@ namespace Ingatlan
             }
             //
         }
-        }
         public int ArEzerFt
         {
             get { return arEzerFt; }
             set
             {
-                if (arEzerFt < 0)
+                if (value < 0)
                 {
                     arEzerFt = 0;
                 }
@@ -63,11 +62,15 @@ namespace Ingatlan
         }
         public override string ToString()
         {
-            return $"{Azonosito} {Cim} {Kategoria} - Terület: {AlapteruletM2} m2 | Ár: {ArEzerFt} ezer Ft";
+            return $"{Azonosito} {Cim} ({Kategoria}) - Terület: {AlapteruletM2} m2 | Ár: {ArEzerFt} ezer Ft";
         }
         public double NegyzetmeterAr()
         {
             return ((ArEzerFt * 1000.0) / AlapteruletM2);
         }
+        //public bool KategoriaEgyezik(string keresettKategoria)
+        //{
+        //    keresettKategoria.ToLower();
+        //}
     }
 }

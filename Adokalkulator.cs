@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ingatlan
+namespace Ingatlanok
 {
     public class Adokalkulator
     {
